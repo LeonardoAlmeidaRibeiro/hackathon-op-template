@@ -8,7 +8,7 @@ contract MeuNFT is ERC721URIStorage {
     using Counters for Counters.Counter;
     Counters.Counter private _tokenIds;
 
-    string public baseURI = "https://meu-nft.com/nft/";
+    string public baseURI = "https://meu-nft.com/nft/"; 
 
     constructor() ERC721("MeuNFT", "MNFT") {}
 
@@ -34,3 +34,4 @@ contract MeuNFT is ERC721URIStorage {
         return baseURI;
     }
 }
+

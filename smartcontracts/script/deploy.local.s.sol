@@ -1,20 +1,36 @@
-// SPDX-License-Identifier: UNLICENSED
-pragma solidity ^0.8.18;
+// SPDX-License-Identifier: MIT
+pragma solidity ^0.8.0;
 
-import {Script, console2} from "forge-std/Script.sol";
-import {Counter} from "../src/Counter.sol";
+import "@openzeppelin/contracts/token/ERC721/extensions/ERC721URIStorage.sol";
+import "@openzeppelin/contracts/utils/Counters.sol";
 
-contract Local is Script {
-    Counter counter;
+contract MeuNFT is ERC721URIStorage {
+    using Counters for Counters.Counter;
+    Counters.Counter private _tokenIds;
 
-    function setUp() public {}
+    string public baseURI = "https://meu-nft.com/nft/";
 
-    function run() public {
-        vm.startBroadcast(0xac0974bec39a17e36ba4a6b4d238ff944bacb478cbed5efcae784d7bf4f2ff80);
+    constructor() ERC721("MeuNFT", "MNFT") {}
 
-        counter = new Counter();
-        console2.log("Counter address: ", address(counter));
+    // Função para criar um novo NFT
+    function mintNFT(address recipient, string memory tokenURI) public returns (uint256) {
+        _tokenIds.increment();
+        uint256 newItemId = _tokenIds.current();
+        
+        _mint(recipient, newItemId);
+        _setTokenURI(newItemId, tokenURI);
 
-        vm.stopBroadcast();
+        return newItemId;
+    }
+
+    // Permite atualizar o baseURI
+    function setBaseURI(string memory newBaseURI) public {
+        // Aqui, você poderia adicionar uma verificação de permissões
+        baseURI = newBaseURI;
+    }
+
+    // Sobrescrevendo a função baseURI para retornar o valor atualizado
+    function _baseURI() internal view override returns (string memory) {
+        return baseURI;
     }
 }

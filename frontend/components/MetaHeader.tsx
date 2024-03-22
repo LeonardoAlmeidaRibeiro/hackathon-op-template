@@ -14,7 +14,7 @@ type MetaHeaderProps = {
 const baseUrl = process.env.NEXT_PUBLIC_VERCEL_URL ? `https://${process.env.NEXT_PUBLIC_VERCEL_URL}/` : "/";
 
 export const MetaHeader = ({
-  title = "Fullstack Web3 Templates",
+  title = "NFTInnovators - Hackathon Nearx",
   description = "Builded with 🏗 Fullstack Web3 Template",
   image = "thumbnail.jpg",
   twitterCard = "summary_large_image",

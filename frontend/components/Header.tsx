@@ -36,7 +36,7 @@ export const Header = () => {
 
   const navLinks = (
     <>
-      <li>
+       <li>
         <NavLink href="/">Home</NavLink>
       </li>
       <li>
@@ -56,12 +56,37 @@ export const Header = () => {
           <MagnifyingGlassIcon className="h-4 w-4" />
           Block Explorer
         </NavLink>
+      </li> 
+      
+      <li>
+        <NavLink href="/blockexplorer">
+          <SparklesIcon className="h-4 w-4" />
+          Principal
+        </NavLink>
+      </li>
+      <li>
+        <NavLink href="/blockexplorer">
+          <MagnifyingGlassIcon className="h-4 w-4" />
+          MarketPlace
+        </NavLink>
+      </li>
+      <li>
+        <NavLink href="/blockexplorer">
+          <MagnifyingGlassIcon className="h-4 w-4" />
+          Coleções
+        </NavLink>
+      </li>
+      <li>
+        <NavLink href="/blockexplorer">
+          <MagnifyingGlassIcon className="h-4 w-4" />
+          Criadores
+        </NavLink>
       </li>
     </>
   );
 
   return (
-    <div className="sticky lg:static top-0 navbar bg-base-100 min-h-0 flex-shrink-0 justify-between z-20 shadow-md shadow-secondary px-0 sm:px-2">
+    <div className="sticky lg:static top-0 navbar bg-rose-500 min-h-0 flex-shrink-0 justify-between z-20 shadow-md shadow-secondary px-0 sm:px-2">
       <div className="navbar-start w-auto lg:w-1/2">
         <div className="lg:hidden dropdown" ref={burgerMenuRef}>
           <label

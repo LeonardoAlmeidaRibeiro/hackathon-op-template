@@ -36,7 +36,7 @@ export const Header = () => {
 
   const navLinks = (
     <>
-       <li>
+       {/* <li>
         <NavLink href="/">Home</NavLink>
       </li>
       <li>
@@ -56,10 +56,10 @@ export const Header = () => {
           <MagnifyingGlassIcon className="h-4 w-4" />
           Block Explorer
         </NavLink>
-      </li> 
+      </li>  */}
       
       <li>
-        <NavLink href="/blockexplorer">
+        <NavLink href="/">
           <SparklesIcon className="h-4 w-4" />
           Principal
         </NavLink>
@@ -77,11 +77,13 @@ export const Header = () => {
         </NavLink>
       </li>
       <li>
-        <NavLink href="/blockexplorer">
+        <NavLink href="/criadores">
           <MagnifyingGlassIcon className="h-4 w-4" />
           Criadores
         </NavLink>
       </li>
+      
+    
     </>
   );
 
@@ -115,8 +117,8 @@ export const Header = () => {
             <Image alt="SE2 logo" className="cursor-pointer" fill src="/logo.svg" />
           </div>
           <div className="flex flex-col">
-            <span className="font-bold leading-tight">FWT</span>
-            <span className="text-xs">Fullstack Web3 Template</span>
+            <span className="font-bold leading-tight">NFTInnovators</span>
+            <span className="text-xs">Projeto Hackathon Nearx</span>
           </div>
         </Link>
         <ul className="hidden lg:flex lg:flex-nowrap menu menu-horizontal px-1 gap-2">{navLinks}</ul>

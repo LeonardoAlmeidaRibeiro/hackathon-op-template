@@ -24,7 +24,7 @@ const Home: NextPage = () => {
               <p>
                 Colorful Abstract Painting <br />
                 <strong>Price: <span style={{ color: 'green' }}>2.95 ETH</span></strong> <br />
-                <Link href="/debug" passHref className="btn">
+                <Link href="/vendas" passHref className="btn">
                   Comprar
                 </Link>{" "}
               </p>
